@@ -1,10 +1,8 @@
 # r0pbaby
 ## Analysis and exploit
 You can know the libc's base address, you can know the libc's system address and you can analyze libc's version by online database or something.
-All you need is return to system with edi=libc's address of "/bin/sh". You can rewrite return address by sending "AAAAAAAA" +  return address. How easy!
-The binary is PIE, so using r0pbaby binary's gadget is just troublesome and needless.
-I read other writeups and all writeups used this approach.
-But my solution is not so smart way.
+All you need is return to system with edi=libc's address of "/bin/sh". You can rewrite return address by sending "AAAAAAAA" +  return address. How easy! I read other writeups and all writeups used this approach. 
+The binary is PIE, so using r0pbaby binary's gadget is just troublesome and needless. But my solution is not so smart. I did use the r0pbaby binary's gadget.
 
 If PIE binary's address was leaked, you can tell the libc's address. This phenomenon is Known as "Offset2lib"(http://cybersecurity.upv.es/attacks/offset2lib/offset2lib.html).
 And vice versa. You can tell the PIE binary's address when the libc's address was leaked.
